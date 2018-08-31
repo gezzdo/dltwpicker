@@ -1,0 +1,168 @@
+@charset "utf-8";
+
+body {
+	font-family: Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	background-color: transparent;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+img.emoji {
+	height: 1em;
+	width: 1em;
+	margin: 0 .05em 0 .1em;
+	vertical-align: -0.1em;
+}
+
+#tweet {
+	position: absolute;
+	left: 0;
+	right: 0;
+	color: #333;
+	background-color: #fff;
+	border-radius: 6px;
+	padding: 8px 32px 8px 64px;
+	min-height: 48px;
+	box-shadow: 0 0 6px rgba(128, 128, 128, 0.75);
+	margin: 6px;
+}
+
+.align-top {
+	top: 0;
+}
+
+.align-bottom {
+	bottom: 0;
+}
+
+#tweet .logo {
+	display: block;
+	position: absolute;
+	padding: 4px;
+	right: 4px;
+	bottom: 4px;
+	width: 16px;
+	height: 16px;
+	border-radius: 12px;
+	background: #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAANCAMAAACXZR4WAAAANlBMVEVHcEwdofIdofIdofIdofIdofIdofIdofIdofIdofIdofIdofIdofIdofIdofIdofIdofIdofKaV7rGAAAAEXRSTlMAwuCIE/WlPh5Xawgv60mw1diF+ZAAAABeSURBVHheTcxJDoAwDATBzurs4P9/FnAklDq552AomB5mylEE8XvJ+nFC1VmBoiaJXa6VoaZBCXqoIHoagDt6AsSsvwDQ/d8p8hn38dJEt7tZSbiSpV9sK99vXbVjHpaMCDjJ7c2nAAAAAElFTkSuQmCC') center center no-repeat;
+}
+
+#tweet a {
+	text-decoration: none;
+	color: #08b;
+}
+
+#tweet a:hover {
+	text-decoration: underline;
+}
+
+#tweet .avatar {
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	border-radius: 24px;
+	box-shadow: 0 2px 4px rgba(128, 128, 128, 0.75);
+}
+
+#tweet .user {
+	font-size: 85%;
+	margin-bottom: 4px;
+}
+
+#tweet .user .name {
+	display: inline-block;
+	font-weight: bold;
+	margin-right: 0.25em;
+}
+
+#tweet .user .screen-name {
+	color: #888;
+	display: inline-block;
+}
+
+#tweet .at {
+	font-size: 85%;
+	color: #888;
+	float: right;
+	margin-right: -24px;
+}
+
+#tweet .message {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+#tweet .thumb {
+	max-width: 180px;
+	max-height: 180px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	display: inline-block;
+	margin-top: 8px;
+}
+
+#timer,
+.timer {
+	display: block;
+	position: absolute;
+	left: 6px;
+	right: 6px;
+	top: 0;
+	height: 2px;
+}
+
+#timer .step,
+.timer .step {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background-color: #08f;
+}
+
+.test-warning {
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	line-height: 1;
+	padding: 4px;
+	color: #fff;
+	background-color: #d00;
+	font-weight: bold;
+	animation: blink 1s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0
+	}
+
+	50% {
+		opacity: 0
+	}
+
+	75% {
+		opacity: 1
+	}
+
+	100% {
+		opacity: 1
+	}
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: all .5s;
+}
+
+.fade-enter {
+	opacity: 0;
+	transform: translateY(4px);
+}
+
+.fade-leave-to {
+	opacity: 0;
+}
