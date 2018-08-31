@@ -104,7 +104,6 @@ img.emoji {
 	margin-top: 8px;
 }
 
-#timer,
 .timer {
 	display: block;
 	position: absolute;
@@ -114,7 +113,6 @@ img.emoji {
 	height: 2px;
 }
 
-#timer .step,
 .timer .step {
 	position: absolute;
 	left: 0;
