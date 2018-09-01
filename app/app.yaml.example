@@ -21,15 +21,15 @@ handlers:
   - url: /static/(.*\.opus)
     mime_type: audio/ogg; codec=opus
     static_files: static/\1
-    upload: static/(.*)
+    upload: static/(.*\.opus)
   - url: /static/(.*\.css)
     mime_type: text/css; charset=UTF-8
     static_files: static/\1
-    upload: static/(.*)
+    upload: static/(.*\.css)
   - url: /static/(.*\.js)
     mime_type: text/javascript; charset=UTF-8
     static_files: static/\1
-    upload: static/(.*)
+    upload: static/(.*\.js)
   - url: /.*
     script: _go_app
 
