@@ -77,6 +77,10 @@
 					<el-tab-pane label="右からスライド" name="slideright"><el-input type="textarea" autosize readonly v-model="css.slideright"></el-input></el-tab-pane>
 				</el-tabs>
 			</template>
+			<h3>ブラウザ設定のアドバイス</h3>
+			<p>OBS ではシーンを切り替えてブラウザが非表示になっても、そのままだと<strong>ブラウザは裏で動きっぱなし</strong>です。</p>
+			<p>設定にある「<strong>表示されていないときにソースをシャットダウン</strong>」にチェックをつけると、非表示の間はブラウザを閉じたのと同じ扱いになり負荷軽減になります。</p>
+			<p>また、複数のシーンに同じものを配置したい場合は作成した「ブラウザ」を右クリックして出るメニューから「コピー」しておき、別のシーンへ「貼り付け（参照）」を行うと、ブラウザ1個を複数のシーンに跨いで配置できるため、CPU負荷軽減やメモリ節約に役立ちます。</p>
 			<h2>動作の仕組み</h2>
 			<ol>
 				<li><a href="https://twitter.com/YozakuraTama/lists/list" target="_blank">たまちゃんのリスト</a>からツイートを取得</li>
