@@ -57,6 +57,9 @@ func tweets(w http.ResponseWriter, r *http.Request) {
 		if tw.QuotedStatusIdStr != "" || tw.InReplyToStatusIdStr != "" || tw.RetweetedStatus != nil {
 			continue
 		}
+		if tw.User.IdStr == "953079145335988224" { // @dotLIVEyoutuber
+			continue
+		}
 		if hashtag != "" && !hasHashtag(tw, hashtag) {
 			continue
 		}

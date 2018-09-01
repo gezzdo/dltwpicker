@@ -279,6 +279,9 @@ const Main = {
             if (t.in_reply_to_status_id_str || t.quoted_status_id_str || t.retweeted_status) {
                 return false;
             }
+            if (t.user.id_str == "953079145335988224") { // @dotLIVEyoutuber
+                return false;
+            }
             if (this.testMode || this.hashtag === '') {
                 return true;
             }
