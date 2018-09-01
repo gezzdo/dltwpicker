@@ -2,20 +2,36 @@ runtime: go
 api_version: go1
 
 handlers:
-- url: /static/(.*\.opus)
-  mime_type: audio/ogg; codec=opus
-  static_files: static/\1
-  upload: static/(.*\.opus)
-- url: /static/(.*\.css)
-  mime_type: text/css; charset=UTF-8
-  static_files: static/\1
-  upload: static/(.*\.css)
-- url: /static/(.*\.js)
-  mime_type: text/javascript; charset=UTF-8
-  static_files: static/\1
-  upload: static/(.*\.js)
-- url: /.*
-  script: _go_app
+  - url: /
+    mime_type: text/html; charset=UTF-8
+    static_files: static/index.html
+    upload: static/index.html
+    http_headers:
+      X-XSS-Protection: 1; mode=block
+      X-Frame-Options: DENY
+      X-Content-Type-Options: nosniff
+  - url: /widget
+    mime_type: text/html; charset=UTF-8
+    static_files: static/widget.html
+    upload: static/widget.html
+    http_headers:
+      X-XSS-Protection: 1; mode=block
+      X-Frame-Options: DENY
+      X-Content-Type-Options: nosniff
+  - url: /static/(.*\.opus)
+    mime_type: audio/ogg; codec=opus
+    static_files: static/\1
+    upload: static/(.*)
+  - url: /static/(.*\.css)
+    mime_type: text/css; charset=UTF-8
+    static_files: static/\1
+    upload: static/(.*)
+  - url: /static/(.*\.js)
+    mime_type: text/javascript; charset=UTF-8
+    static_files: static/\1
+    upload: static/(.*)
+  - url: /.*
+    script: _go_app
 
 env_variables:
   TWITTER_ACCESS_TOKEN: 'your access token'

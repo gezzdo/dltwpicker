@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="UTF-8">
+<title>どらっぴ</title>
+<link rel="stylesheet" href="/static/widget.css">
+<audio id="se" preload src="/static/se.opus"></audio>
+<div id="app" style="display: none">
+	<div class="test-warning" :class="{ 'align-top': !alignBottom, 'align-bottom': alignBottom }" v-if="testMode">どらっぴテストモード中</div>
+	<transition name="fade" @after-leave="completeFadeOut">
+		<div id="tweet" v-if="tweet" :class="{ 'align-top': !alignBottom, 'align-bottom': alignBottom }">
+			<tweet-timer :duration="tweetDuration" @on-complete="timerComplete"></tweet-timer>
+			<img class="avatar" :src="tweet.user.profile_image_url_https.replace('_normal', '_bigger')">
+			<a class="at" :href="'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str">{{ formatTime(tweet.created_at) }}</a>
+			<div class="user"><tweet-username :name="tweet.user.name"></tweet-username><div class="screen-name">@{{ tweet.user.screen_name }}</div></div>
+			<tweet-message :tweet="tweet" @on-parsed="decorateMessage"></tweet-message>
+			<span class="logo"></span>
+		</div>
+	</transition>
+</div>
+<script src="https://twemoji.maxcdn.com/2/twemoji.min.js?11.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+<script src="/static/widget.js"></script>
+</html>
