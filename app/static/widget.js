@@ -285,7 +285,7 @@ const Main = {
             if (this.testMode || this.hashtag === '') {
                 return true;
             }
-            return indexOfHashtag(t, this.hashtag) != -1;
+            return indexOfHashtag(t, this.hashtag) != -1 && indexOfHashtag(t, '見てます') != -1;
         },
 
         findNextTweet(id) {

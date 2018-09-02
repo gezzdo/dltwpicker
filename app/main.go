@@ -60,7 +60,7 @@ func tweets(w http.ResponseWriter, r *http.Request) {
 		if tw.User.IdStr == "953079145335988224" { // @dotLIVEyoutuber
 			continue
 		}
-		if hashtag != "" && !hasHashtag(tw, hashtag) {
+		if hashtag != "" && (!hasHashtag(tw, hashtag) || !hasHashtag(tw, "見てます")) {
 			continue
 		}
 		if t != 0 {
