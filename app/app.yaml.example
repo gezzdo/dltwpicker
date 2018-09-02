@@ -45,3 +45,7 @@ nobuild_files:
 
 skip_files:
   - vendor/.*$
+
+automatic_scaling:
+  min_idle_instances: 1
+  max_idle_instances: 1
